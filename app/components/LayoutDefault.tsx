@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from 'react';
+import { Button } from "@/components/ui/button"
 
 interface User {
   _id: string;
@@ -54,7 +55,7 @@ export default function DefaultLayout() {
           <Link href="/posts">Posts</Link>
           <p>About</p>
           <span className="font-medium">이름:</span> {currentUser.name} 로그인 중 입니다.
-          <button onClick={handleLogout}>로그아웃</button>
+          <Button variant="destructive" onClick={handleLogout}>로그아웃</Button>
         </nav>
         
       </header>
@@ -77,8 +78,12 @@ export default function DefaultLayout() {
             <Link href="/">Home</Link>
             <Link href="/posts">Posts</Link>
             <p>About</p>
-            <Link href="/api/auth/getPage">Login</Link>
-            <Link href="/api/auth/getPage">Signup</Link>
+            <Button asChild>
+              <Link href="/api/auth/getPage">Login</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/api/auth/getPage">Signup</Link>
+            </Button>
           </nav>
           
         </header>
