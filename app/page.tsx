@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+
 interface User {
   _id: string;
   name: string;
@@ -19,6 +20,15 @@ interface AuthResponse {
   message: string;
   error?: string;
 }
+
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 export default function Home() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -161,6 +171,7 @@ export default function Home() {
   // 로그인 상태인 경우
   if (currentUser) {
     return (
+      
       <div className="min-h-screen bg-gray-50 py-8">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
@@ -188,7 +199,13 @@ export default function Home() {
               로그아웃
             </button>
           </div>
-
+          <Carousel>
+            <CarouselContent>
+              <CarouselItem className="basis-1/3">apgoioagjiaojisg</CarouselItem>
+              <CarouselItem className="basis-2/3">gapoogasijoagdi</CarouselItem>
+              <CarouselItem className="basis-full">1dauhsdauhafs</CarouselItem>
+            </CarouselContent>
+          </Carousel>
           
           {/*
           유저 목록 보기 버튼 및 리스트
@@ -389,6 +406,13 @@ export default function Home() {
             게시판으로 이동
           </Link>
         </div>
+        <Carousel>
+            <CarouselContent>
+              <CarouselItem className="basis-1/3">apgoioagjiaojisg</CarouselItem>
+              <CarouselItem className="basis-2/3">gapoogasijoagdi</CarouselItem>
+              <CarouselItem className="basis-full">1dauhsdauhafs</CarouselItem>
+            </CarouselContent>
+          </Carousel>
       </div>
     </div>
   );
