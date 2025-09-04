@@ -62,7 +62,9 @@ export default function DefaultLayout() {
             <Link className="px-2 py-1 text-sm md:text-base" href="/posts">
               Posts
             </Link>
-            <p className="px-2 py-1 text-sm md:text-base">About</p>
+            <Link className="px-2 py-1 text-sm md:text-base" href="/api/about">
+              About
+            </Link>
             <span className="font-medium text-sm md:text-base">
               이름: {currentUser.name} 로그인 중 입니다.
             </span>
